@@ -36,9 +36,59 @@
   ======================================================== -->
   <!-- ADSTERA -->
   <script type='text/javascript' src='//pl24172055.cpmrevenuegate.com/7b/a8/80/7ba880a441f8993d0f1219fcc232fa8f.js'></script>
+<style>
+  /* styles.css */
+
+.modal {
+    display: none; /* Modal tidak terlihat secara default */
+    position: fixed; /* Tetap di posisi saat menggulir */
+    z-index: 1000; /* Agar modal berada di atas konten lain */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Tambahkan scroll jika perlu */
+    background-color: rgba(0, 0, 0, 0.5); /* Background semi-transparan */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Menempatkan modal di tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Lebar modal */
+    max-width: 600px; /* Lebar maksimal */
+    position: relative;
+}
+
+#close {
+    color: #aaa;
+    float: right;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+
 </head>
 
 <body class="index-page">
+<!-- Modal -->
+<div id="welcomeModal" class="modal">
+  <div class="modal-content">
+      <span id="close">&times; </span>
+      <a href="https://www.cpmrevenuegate.com/kr4kmejsc?key=0103b487668520ed68b01358f843382c">close</a>
+      <h2>Welcome To My Portfolio.</h2>
+      <p>Thank You For Coming.</p>
+  </div>
+</div>
 
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -112,7 +162,8 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <p>My name is Brian Oneal, a web developer based in Jakarta, Indonesia. I specialize in creating engaging and functional websites using HTML, CSS, and JavaScript.</p>
+        <p>Throughout my career, I have worked on various projects, from personal websites to complex web applications. I believe every project is an opportunity to learn something new and to tackle exciting challenges.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -124,8 +175,7 @@
           <div class="col-lg-8 content">
             <h2>UI/UX Designer &amp; Web Developer.</h2>
             <p class="fst-italic py-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              In addition to coding, I enjoy watching movies and exploring new technologies. My passion for technology and creativity drives me to continuously grow in this field.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -146,8 +196,7 @@
               </div>
             </div>
             <p class="py-3">
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
+              On this site, you can explore the projects I’ve worked on and learn more about my skills and experience. If you’re interested in collaborating or have any questions, feel free to reach out.
             </p>
           </div>
         </div>
@@ -812,7 +861,38 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
+  <script>
+  // script.js
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Mendapatkan elemen modal dan tombol close
+    let modal = document.getElementById('welcomeModal');
+    let closeBtn = document.getElementById('close');
+
+    // Fungsi untuk menampilkan modal
+    function showModal() {
+        modal.style.display = 'block';
+    }
+
+    // Delay 6 detik sebelum menampilkan modal
+    setTimeout(showModal, 6000); // 6000 ms = 6 detik
+
+    // Menutup modal ketika pengguna mengklik tombol 'X'
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Menutup modal ketika pengguna mengklik di luar modal (opsional)
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+    
+    
+    </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
